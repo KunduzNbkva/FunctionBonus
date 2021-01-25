@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">App Bonus</string>
+    <string name="toolbar_title">Beeline бонус</string>
+    <string name="program_closed">Новые подключения к программе закрыты</string>
+    <string name="current_points">Количество накопленных баллов</string>
+    <string name="check">Проверить</string>
+    <string name="megabites">На мегабайты</string>
+    <string name="minutes">На минуты внутри сети</string>
+    <string name="sms">На SMS</string>
+    <string name="todo">TODO</string>
+</resources>
