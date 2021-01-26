@@ -5,7 +5,11 @@
     <string name="current_points">Количество накопленных баллов</string>
     <string name="check">Проверить</string>
     <string name="megabites">На мегабайты</string>
-    <string name="minutes">На минуты внутри сети</string>
     <string name="sms">На SMS</string>
     <string name="todo">TODO</string>
+    <string name="minutes">На минуты внутри сети</string>
+    <string name="Dop_info">Дополнительная информация</string>
+    <string name="dop_text">
+        При обмене баллов предыдущие бонусы на минуты, мегабайты или SMS - сгорают. \n\nСрок действия пакетов минут, SMS и интернета - 30 дней. \n\nПроверить остатки пакета: *800*3#
+    </string>
 </resources>

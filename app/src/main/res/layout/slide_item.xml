@@ -18,7 +18,7 @@
         android:textSize="50sp"
         android:textStyle="bold"
         android:fontFamily="@font/mediumfirasans"
-        android:textColor="@color/yellow"
+        android:textColor="@color/grey"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

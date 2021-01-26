@@ -14,7 +14,8 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
             <ImageView
                 android:id="@+id/navigation_icon"
                 android:layout_width="35dp"
@@ -29,7 +30,7 @@
                 android:fontFamily="@font/regularfirasans"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:layout_marginStart="100dp"/>
+                android:layout_marginStart="70dp"/>
         </com.google.android.material.appbar.MaterialToolbar>
 
         <TextView
@@ -46,10 +47,10 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/current_points"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             app:cardCornerRadius="10dp"
-            android:padding="6dp">
+            android:layout_margin="6dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +96,7 @@
                     android:fontFamily="@font/boldfirasans"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_horizontal_picker"
+                    android:id="@+id/rv_megabites_picker"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:clipToPadding="false" />
@@ -105,7 +106,7 @@
                     android:orientation="horizontal"
                     android:gravity="center">
                     <TextView
-                        android:id="@+id/selected_item_points"
+                        android:id="@+id/megabites_in_points"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="100"
@@ -121,18 +122,154 @@
 
                 </LinearLayout>
                 <Button
-                    android:id="@+id/changeToMB_btn"
+                    android:id="@+id/changeToMb_btn"
                     android:layout_width="300dp"
                     android:layout_height="60dp"
                     android:text="Oбменять"
                     android:textColor="@color/black"
                     android:fontFamily="@font/mediumfirasans"
                     android:layout_gravity="center" />
-
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/minutes_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="6dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minutes"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/boldfirasans"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_minutes_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:clipToPadding="false" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/minutes_in_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textSize="18sp"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="баллов"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/changeToMin_btn"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:text="Oбменять"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/mediumfirasans"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/sms_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="6dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sms"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/boldfirasans"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_sms_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:clipToPadding="false" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/sms_in_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textSize="18sp"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="баллов"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/changeToSms_btn"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:text="Oбменять"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/mediumfirasans"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="6dp">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/btnstyle"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Dop_info"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/boldfirasans"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <com.example.appbonus.customViews.LinkEnabledTextView
+            android:id="@+id/linkedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"/>
 
     </LinearLayout>
 </ScrollView>

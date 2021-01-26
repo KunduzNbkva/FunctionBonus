@@ -1,4 +1,4 @@
-package com.example.appbonus
+package com.example.appbonus.customViews
 
 import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
