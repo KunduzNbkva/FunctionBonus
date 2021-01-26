@@ -9,7 +9,6 @@
     <string name="todo">TODO</string>
     <string name="minutes">На минуты внутри сети</string>
     <string name="Dop_info">Дополнительная информация</string>
-    <string name="dop_text">
-        При обмене баллов предыдущие бонусы на минуты, мегабайты или SMS - сгорают. \n\nСрок действия пакетов минут, SMS и интернета - 30 дней. \n\nПроверить остатки пакета: *800*3#
-    </string>
+    <string name="dop_text">При обмене баллов предыдущие бонусы на минуты, мегабайты или SMS - сгорают. \n\nСрок действия пакетов минут, SMS и интернета - 30 дней. \n\nПроверить остатки пакета: <a href="tel:">*800*3#</a></string>
+    <string name="check_points_code">*800*3#</string>
 </resources>

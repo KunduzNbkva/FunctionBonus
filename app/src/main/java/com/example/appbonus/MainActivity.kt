@@ -9,8 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appbonus.adapters.MegabitesAdapter
-import com.example.appbonus.customViews.LinkEnabledTextView
+import com.example.appbonus.adapter.MegabitesAdapter
 import com.example.appbonus.customViews.PickerLayoutManager
 
 
@@ -39,11 +38,14 @@ class MainActivity : AppCompatActivity()  {
     }
 
     private fun initViews(){
+        val textLink = findViewById<View>(R.id.linkedTextView)
         val megabitesButton=findViewById<Button>(R.id.changeToMb_btn)
         val minutesButton=findViewById<Button>(R.id.changeToMin_btn)
         val smsButton=findViewById<Button>(R.id.changeToSms_btn)
+        val checkButton=findViewById<Button>(R.id.button_check)
 
-        initLinkedTextView()
+        textLink.setOnClickListener { checkPointsClick()}
+        checkButton.setOnClickListener{checkPointsClick()}
 
         megabitesPickerRV = findViewById(R.id.rv_megabites_picker)
         minutesPickerRV = findViewById(R.id.rv_minutes_picker)
@@ -69,11 +71,11 @@ class MainActivity : AppCompatActivity()  {
         )
         smsList.addAll(
             listOf(
-                Model("10", "Sms", "30","*800*2*10#"),
-                Model("20", "Sms", "50", "*800*2*20#"),
-                Model("50", "Sms", "100", "*800*2*50#"),
-                Model("120", "Sms", "200", "*800*2*120#"),
-                Model("360", "Sms", "400","*800*2*360#"))
+                Model("10", "sms", "30","*800*2*10#"),
+                Model("20", "sms", "50", "*800*2*20#"),
+                Model("50", "sms", "100", "*800*2*50#"),
+                Model("120", "sms", "200", "*800*2*120#"),
+                Model("360", "sms", "400","*800*2*360#"))
         )
 
         getCurrentPos()
@@ -91,12 +93,6 @@ class MainActivity : AppCompatActivity()  {
         setPickers(smsPickerRV,R.id.sms_in_points,smsList,smsAdapter)
     }
 
-    private fun initLinkedTextView() {
-        val textView =
-            findViewById<View>(R.id.linkedTextView) as LinkEnabledTextView
-        textView.setOnTextLinkClickListener(this::onTextLinkClick)
-        textView.text = getText(R.string.dop_text)
-    }
 
     private fun setPickers(rv:RecyclerView,view:Int,list:ArrayList<Model>, adapter:MegabitesAdapter) {
         // Setting the padding such that the items will appear in the middle of the screen
@@ -122,10 +118,7 @@ class MainActivity : AppCompatActivity()  {
     }
 
     private fun setAdapter(
-        rv: RecyclerView,
-        sliderAdapter: MegabitesAdapter,
-        list: ArrayList<Model>
-    ) {
+        rv: RecyclerView, sliderAdapter: MegabitesAdapter, list: ArrayList<Model>) {
         // Setting Adapter
         rv.adapter = sliderAdapter.apply {
             setData(list)
@@ -168,12 +161,12 @@ class MainActivity : AppCompatActivity()  {
             startActivity(dialIntent)
     }
 
-    fun onTextLinkClick(
-        textView: View?,
-        clickedString: String
-    ) {
-        val ussdCode =
-            clickedString.substring(0, clickedString.indexOf("#")) + Uri.encode("#")
-        startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCode")))
+    private fun checkPointsClick(){
+        val ussdCode = "*800*3#"
+        startActivity(Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",ussdCode,null)))
     }
+
+
+
+
 }

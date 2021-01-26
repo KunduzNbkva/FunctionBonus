@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import java.lang.Math.abs
-import java.lang.Math.sqrt
 
 class PickerLayoutManager(context: Context?) : LinearLayoutManager(context) {
 
@@ -53,10 +51,10 @@ class PickerLayoutManager(context: Context?) : LinearLayoutManager(context) {
             // Calculating the distance of the child from the center
             val child = getChildAt(i)
             val childMid = (getDecoratedLeft(child!!) + getDecoratedRight(child)) / 2.0f
-            val distanceFromCenter = abs(mid - childMid)
+            val distanceFromCenter = kotlin.math.abs(mid - childMid)
 
             // The scaling formula
-            val scale = 1 - sqrt((distanceFromCenter / width).toDouble()).toFloat() * 0.66f
+            val scale = 1 - kotlin.math.sqrt((distanceFromCenter / width).toDouble()).toFloat() * 0.66f
 
             // Set scale to view
             child.scaleX = scale
@@ -78,7 +76,7 @@ class PickerLayoutManager(context: Context?) : LinearLayoutManager(context) {
                 val child = recyclerView.getChildAt(i)
                 val childCenterX =
                     getDecoratedLeft(child) + (getDecoratedRight(child) - getDecoratedLeft(child)) / 2
-                val newDistance = abs(childCenterX - recyclerViewCenterX)
+                val newDistance = kotlin.math.abs(childCenterX - recyclerViewCenterX)
                 if (newDistance < minDistance) {
                     minDistance = newDistance
                     position = recyclerView.getChildLayoutPosition(child)

@@ -1,4 +1,4 @@
-package com.example.appbonus.adapters
+package com.example.appbonus.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,7 +14,7 @@ import com.example.appbonus.Model
 import com.example.appbonus.R
 
 
-class MegabitesAdapter() : RecyclerView.Adapter<MegabitesAdapter.PickerItemViewHolder>() {
+class MegabitesAdapter : RecyclerView.Adapter<MegabitesAdapter.PickerItemViewHolder>() {
 
     private val data: ArrayList<Model> = ArrayList()
     var callback: Callback? = null
@@ -66,7 +66,7 @@ class MegabitesAdapter() : RecyclerView.Adapter<MegabitesAdapter.PickerItemViewH
 
     inner class PickerItemViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
-        val tvItem: TextView? = itemView?.findViewById(R.id.slide_number)
+        private val tvItem: TextView? = itemView?.findViewById(R.id.slide_number)
 
 
 
@@ -75,7 +75,7 @@ class MegabitesAdapter() : RecyclerView.Adapter<MegabitesAdapter.PickerItemViewH
             tvItem?.textSize = 22f
            if (selectedItem?.equals(adapterPosition)!!) {
                setGradient(textView = tvItem!!)
-                tvItem?.text = model.numberOf + model.text
+                tvItem.text = model.numberOf + model.text
             } else {
                 tvItem?.setTextColor(ContextCompat.getColor(ctx!!,
                     R.color.grey
